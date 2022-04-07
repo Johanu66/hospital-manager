@@ -12,7 +12,7 @@
 
     if(isset($_POST["search"]["value"]))
     {	// changer les colonnes à rechercher
-        $query .= "AND ( id_prestation LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "AND ( CAST(id_prestation AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
         $query .= 'OR nom_prestation LIKE "%'.$_POST["search"]["value"].'%" ';
         $query .= 'OR nom_departement LIKE "%'.$_POST["search"]["value"].'%" ';
         $query .= 'OR montant_prestation LIKE "%'.$_POST["search"]["value"].'%" ';
