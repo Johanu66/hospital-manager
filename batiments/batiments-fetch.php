@@ -12,8 +12,8 @@
 
     if(isset($_POST["search"]["value"]))
     {	// changer les colonnes à rechercher
-        $query .= 'AND ( nom_batiment LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR statut_batiment LIKE "%'.$_POST["search"]["value"].'%" ) ';
+        $query .= "AND ( nom_batiment ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CAST(statut_batiment AS TEXT) ILIKE '%".$_POST['search']['value']."%' ) ";
     }
 
     // Filtrage dans le tableau
