@@ -12,15 +12,15 @@
 
     if(isset($_POST["search"]["value"]))
     {	// changer les colonnes à rechercher
-        $query .= 'AND ( date_rendez_vous LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR nom_personne LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR prenom_personne LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR nom_specialite LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR symptomes_rendez_vous LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR tel_personne LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR paiement_rendez_vous LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR montant_paye_rendez_vous LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR statut_rendez_vous LIKE "%'.$_POST["search"]["value"].'%" ) ';
+        $query .= "AND ( CAST(date_rendez_vous AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_personne ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR prenom_personne ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_specialite ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR symptomes_rendez_vous ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR tel_personne ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CAST(paiement_rendez_vous AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CAST(montant_paye_rendez_vous AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CAST(statut_rendez_vous AS TEXT) ILIKE '%".$_POST['search']['value']."%' ) ";
     }
 
     // Filtrage dans le tableau
@@ -35,7 +35,7 @@
 
     if($_POST['length'] != -1)
     {
-        $query .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
+        $query .= 'LIMIT ' . $_POST['length'].' OFFSET '. $_POST['start'] ;
     }
 
     $statement = $bdd->prepare($query);

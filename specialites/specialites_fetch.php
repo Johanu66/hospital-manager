@@ -12,10 +12,10 @@
 
     if(isset($_POST["search"]["value"]))
     {	// changer les colonnes à rechercher
-        $query .= 'WHERE ( id_specialite LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR nom_specialite LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR desc_specialite LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR statut_specialite LIKE "%'.$_POST["search"]["value"].'%" ) ';
+        $query .= "WHERE ( CAST(id_specialite AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_specialite ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR desc_specialite ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CAST(statut_specialite AS TEXT) ILIKE '%".$_POST['search']['value']."%' ) ";
     }
 
     // Filtrage dans le tableau
@@ -30,7 +30,7 @@
 
     if($_POST['length'] != -1)
     {
-        $query .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
+        $query .= 'LIMIT ' . $_POST['length'].' OFFSET '. $_POST['start'] ;
     }
 
     $statement = $bdd->prepare($query);

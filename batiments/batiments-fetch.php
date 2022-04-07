@@ -28,7 +28,7 @@
 
     if($_POST['length'] != -1)
     {
-        $query .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
+        $query .= 'LIMIT ' . $_POST['length'].' OFFSET '. $_POST['start'] ;
     }
 
     $statement = $bdd->prepare($query);

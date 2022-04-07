@@ -12,11 +12,11 @@
 
     if(isset($_POST["search"]["value"]))
     {	// changer les colonnes à rechercher
-        $query .= 'AND ( date_depense LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR nom_depense LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR nom_departement LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR montant_depense LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR statut_depense LIKE "%'.$_POST["search"]["value"].'%" ) ';
+        $query .= "AND ( CAST(date_depense AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_depense ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_departement ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CAST(montant_depense AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CAST(statut_depense AS TEXT) ILIKE '%".$_POST['search']['value']."%' ) ";
     }
 
     // Filtrage dans le tableau
@@ -31,7 +31,7 @@
 
     if($_POST['length'] != -1)
     {
-        $query .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
+        $query .= 'LIMIT ' . $_POST['length'].' OFFSET '. $_POST['start'] ;
     }
 
     $statement = $bdd->prepare($query);

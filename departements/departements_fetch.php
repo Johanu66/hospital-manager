@@ -15,7 +15,7 @@
         $query .= "AND ( CAST(id_departement AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
         $query .= "OR nom_departement ILIKE '%".$_POST['search']['value']."%' ";
         $query .= "OR desc_departement ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR nom_batiment LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_batiment ILIKE '%".$_POST['search']['value']."%' ";
         $query .= "OR CAST(statut_departement AS TEXT) ILIKE '%".$_POST['search']['value']."%' ) ";
     }
 
@@ -31,7 +31,7 @@
 
     if($_POST['length'] != -1)
     {
-        $query .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
+        $query .= 'LIMIT ' . $_POST['length'].' OFFSET '. $_POST['start'] ;
     }
 
     $statement = $bdd->prepare($query);
