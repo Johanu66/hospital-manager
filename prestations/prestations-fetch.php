@@ -17,7 +17,7 @@
         $query .= "OR nom_departement ILIKE '%".$_POST['search']['value']."%' ";
         $query .= "OR montant_prestation ILIKE '%".$_POST['search']['value']."%' ";
         $query .= "OR notes_prestation ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR statut_prestation ILIKE '%".$_POST['search']['value']."%' ) ";
+        $query .= "OR CAST(statut_prestation AS TEXT) ILIKE '%".$_POST['search']['value']."%' ) ";
     }
 
     // Filtrage dans le tableau
