@@ -12,11 +12,11 @@
 
     if(isset($_POST["search"]["value"]))
     {	// changer les colonnes à rechercher
-        $query .= 'AND ( id_departement LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR nom_departement LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR desc_departement LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR nom_batiment LIKE "%'.$_POST["search"]["value"].'%" ';
-        $query .= 'OR statut_departement LIKE "%'.$_POST["search"]["value"].'%" ) ';
+        $query .= "AND ( CAST(id_departement AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_departement ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR desc_departement ILIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_batiment LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CAST(statut_departement AS TEXT) ILIKE '%".$_POST['search']['value']."%' ) ";
     }
 
     // Filtrage dans le tableau
