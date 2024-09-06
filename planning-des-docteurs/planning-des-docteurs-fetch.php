@@ -12,11 +12,11 @@
 
     if(isset($_POST["search"]["value"]))
     {	// changer les colonnes à rechercher
-        $query .= "AND ( photo_personne ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR nom_personne ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR prenom_personne ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR nom_departement ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR CAST(planning AS TEXT) ILIKE '%".$_POST['search']['value']."%' ) ";
+        $query .= "AND ( photo_personne LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_personne LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR prenom_personne LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_departement LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CONCAT(planning, '') LIKE '%".$_POST['search']['value']."%' ) ";
     }
 
     // Filtrage dans le tableau

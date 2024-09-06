@@ -87,11 +87,11 @@
                             <p>Ravi de vous revoir!</p>
                             <form action="" method="POST">
                                 <div class="form-group">
-                                    <input type="text" name="email_personne" class="form-control" placeholder="Email" required="" value="johanugandonou@gmail.com">
+                                    <input type="text" name="email_personne" class="form-control" placeholder="Email" required="" value="claire.dupont@example.com">
                                     <i class="ik ik-user"></i>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="mdp_compte" class="form-control" placeholder="Password" required="" value="1234">
+                                    <input type="password" name="mdp_compte" class="form-control" placeholder="Password" required="" value="Az3$54Tg">
                                     <i class="ik ik-lock"></i>
                                 </div>
                                 <div class="row">

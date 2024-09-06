@@ -200,7 +200,11 @@
                 "order":[],
                 "ajax":{
                     url:"prestations-fetch.php", //changer
-                    type:"POST"
+                    type:"POST",
+                    error: function(xhr, error, code) {
+                        console.log('Error:', error); // Pour déboguer
+                        alert('Une erreur est survenue lors de la récupération des données.');
+                    }
                 },
                 "columnDefs":[
                     {

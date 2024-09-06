@@ -12,16 +12,16 @@
 
     if(isset($_POST["search"]["value"]))
     {	// changer les colonnes à rechercher
-        $query .= "AND ( CAST(id_personne AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR nom_personne ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR prenom_personne ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR email_personne ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR tel_personne ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR adresse_personne ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR CAST(sexe_personne AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR CAST(date_naissance_personne AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR categorie_personnel ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR CAST(date_prise_fonction_personnel AS TEXT) ILIKE '%".$_POST['search']['value']."%' ) ";
+        $query .= "AND ( CONCAT(id_personne, '') LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_personne LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR prenom_personne LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR email_personne LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR tel_personne LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR adresse_personne LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CONCAT(sexe_personne, '') LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CONCAT(date_naissance_personne, '') LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR categorie_personnel LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CONCAT(date_prise_fonction_personnel, '') LIKE '%".$_POST['search']['value']."%' ) ";
     }
 
     // Filtrage dans le tableau

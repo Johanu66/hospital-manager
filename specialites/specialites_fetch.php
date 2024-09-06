@@ -12,10 +12,10 @@
 
     if(isset($_POST["search"]["value"]))
     {	// changer les colonnes à rechercher
-        $query .= "WHERE ( CAST(id_specialite AS TEXT) ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR nom_specialite ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR desc_specialite ILIKE '%".$_POST['search']['value']."%' ";
-        $query .= "OR CAST(statut_specialite AS TEXT) ILIKE '%".$_POST['search']['value']."%' ) ";
+        $query .= "WHERE ( CONCAT(id_specialite, '') LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR nom_specialite LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR desc_specialite LIKE '%".$_POST['search']['value']."%' ";
+        $query .= "OR CONCAT(statut_specialite, '') LIKE '%".$_POST['search']['value']."%' ) ";
     }
 
     // Filtrage dans le tableau
