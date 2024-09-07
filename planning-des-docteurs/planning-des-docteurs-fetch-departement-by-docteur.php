@@ -7,4 +7,6 @@
         $row = $statement->fetch();
         $output = $row['nom_departement'];
     }
+    
+    header('Content-Type: application/json');
     echo json_encode($output);

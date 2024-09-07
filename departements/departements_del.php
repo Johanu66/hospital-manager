@@ -7,5 +7,7 @@
 
         $statement = $bdd->prepare("DELETE FROM departement WHERE id_departement = ?");
         $statement->execute(array($_POST['id']));
-        echo json_encode($result['nom_departement']);
+        
+    header('Content-Type: application/json');
+    echo json_encode($result['nom_departement']);
     }
