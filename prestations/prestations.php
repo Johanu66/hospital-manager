@@ -201,6 +201,7 @@
                 "ajax":{
                     url:"prestations-fetch.php", //changer
                     type:"POST",
+                    dataType:"json",
                     error: function(xhr, error, code) {
                         console.log('Error:', error); // Pour déboguer
                         alert('Une erreur est survenue lors de la récupération des données.');

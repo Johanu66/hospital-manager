@@ -203,6 +203,7 @@
                 "order":[],
                 "ajax":{
                     url:"rendez-vous-fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[

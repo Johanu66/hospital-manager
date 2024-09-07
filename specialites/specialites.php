@@ -197,6 +197,7 @@
                 "order":[],
                 "ajax":{
                     url:"specialites_fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[

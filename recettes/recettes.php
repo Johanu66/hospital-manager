@@ -203,6 +203,7 @@
                 "order":[],
                 "ajax":{
                     url:"recettes-fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[

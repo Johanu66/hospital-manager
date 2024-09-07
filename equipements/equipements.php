@@ -201,6 +201,7 @@
                 "order":[],
                 "ajax":{
                     url:"equipements-fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[

@@ -204,6 +204,7 @@
                 "order":[],
                 "ajax":{
                     url:"patients_fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[

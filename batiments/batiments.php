@@ -199,6 +199,7 @@
                 "order":[],
                 "ajax":{
                     url:"batiments-fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[

@@ -272,6 +272,7 @@
                 "order":[],
                 "ajax":{
                     url:"docteurs_fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[

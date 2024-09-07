@@ -205,6 +205,7 @@
                 "order":[],
                 "ajax":{
                     url:"personnels-fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[

@@ -201,6 +201,7 @@
                 "order":[],
                 "ajax":{
                     url:"planning-des-docteurs-fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[
