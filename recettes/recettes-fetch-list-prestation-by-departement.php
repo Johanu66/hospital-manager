@@ -14,4 +14,6 @@
             $output .= ">".$row['nom_prestation']."</option>";
         }
     }
+    
+    header('Content-Type: application/json');
     echo json_encode($output);

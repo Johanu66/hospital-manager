@@ -7,4 +7,6 @@
         $row = $statement->fetch();
         $output = $row['montant_prestation'];
     }
+    
+    header('Content-Type: application/json');
     echo json_encode($output);

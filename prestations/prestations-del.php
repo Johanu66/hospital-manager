@@ -12,5 +12,7 @@
             "user_del_prestation" => $_SESSION['nom']." ".$_SESSION['prenom']
         ], " id_prestation = ".$_POST['id']);
 
-        echo json_encode($result['nom_prestation']);
+        
+    header('Content-Type: application/json');
+    echo json_encode($result['nom_prestation']);
     }

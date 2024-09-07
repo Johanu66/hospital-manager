@@ -9,4 +9,6 @@
         $element[] = $row['nom_departement'];
         $output[] = $element;
     }
+    
+    header('Content-Type: application/json');
     echo json_encode($output);

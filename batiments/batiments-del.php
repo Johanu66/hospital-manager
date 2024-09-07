@@ -8,5 +8,7 @@
             "user_del_batiment" => $_SESSION['nom']." ".$_SESSION['prenom']
         ], " id_batiment = ".$_POST['id']);
 
-        echo json_encode(" ");
+        
+    header('Content-Type: application/json');
+    echo json_encode(" ");
     }

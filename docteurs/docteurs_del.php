@@ -11,5 +11,7 @@
         $statement = $bdd->prepare("DELETE FROM personne WHERE id_personne = ?");
         $statement->execute(array($result['id_personne']));
         $docteur = $result['nom_personne']." ".$result['prenom_personne'];
-        echo json_encode($docteur);
+        
+    header('Content-Type: application/json');
+    echo json_encode($docteur);
     }
