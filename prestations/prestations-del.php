@@ -13,6 +13,10 @@
         ], " id_prestation = ".$_POST['id']);
 
         
-    header('Content-Type: application/json');
-    echo json_encode($result['nom_prestation']);
+        header('Content-Type: application/json');
+        echo json_encode($result['nom_prestation']);
+        // Vérification d'erreur
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            echo 'Erreur JSON : ' . json_last_error_msg();
+        }
     }

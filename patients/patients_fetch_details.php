@@ -94,3 +94,7 @@
     
     header('Content-Type: application/json');
     echo json_encode($output);
+    // Vérification d'erreur
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        echo 'Erreur JSON : ' . json_last_error_msg();
+    }
