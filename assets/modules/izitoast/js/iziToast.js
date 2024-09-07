@@ -1,6 +1,6 @@
 /*
 * iziToast | v1.4.0
-* http://izitoast.marcelodolce.com
+* https://izitoast.marcelodolce.com
 * by Marcelo Dolce.
 */
 (function (root, factory) {

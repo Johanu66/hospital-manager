@@ -816,14 +816,14 @@ function set(type, name, callback) {
   return type;
 }
 
-var xhtml = "http://www.w3.org/1999/xhtml";
+var xhtml = "https://www.w3.org/1999/xhtml";
 
 var namespaces = {
-  svg: "http://www.w3.org/2000/svg",
+  svg: "https://www.w3.org/2000/svg",
   xhtml: xhtml,
-  xlink: "http://www.w3.org/1999/xlink",
-  xml: "http://www.w3.org/XML/1998/namespace",
-  xmlns: "http://www.w3.org/2000/xmlns/"
+  xlink: "https://www.w3.org/1999/xlink",
+  xml: "https://www.w3.org/XML/1998/namespace",
+  xmlns: "https://www.w3.org/2000/xmlns/"
 };
 
 function namespace(name) {
@@ -2840,7 +2840,7 @@ function parseCss(value) {
 
 function parseSvg(value) {
   if (value == null) return identity$2;
-  if (!svgNode) svgNode = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  if (!svgNode) svgNode = document.createElementNS("https://www.w3.org/2000/svg", "g");
   svgNode.setAttribute("transform", value);
   if (!(value = svgNode.transform.baseVal.consolidate())) return identity$2;
   value = value.matrix;
@@ -7294,7 +7294,7 @@ function precisionRound(step, max) {
 // Fast Robust Geometric Predicates, Discrete & Computational Geometry 18(3)
 // 305–363 (1997).
 // Code adapted from GeographicLib by Charles F. F. Karney,
-// http://geographiclib.sourceforge.net/
+// https://geographiclib.sourceforge.net/
 
 function adder() {
   return new Adder;
@@ -9889,7 +9889,7 @@ function multiplex(streams) {
 // 960×500. The projection also works quite well at 960×600 if you change the
 // scale to 1285 and adjust the translate accordingly. The set of standard
 // parallels for each region comes from USGS, which is published here:
-// http://egsc.usgs.gov/isb/pubs/MapProjections/projections.html#albers
+// https://egsc.usgs.gov/isb/pubs/MapProjections/projections.html#albers
 function albersUsa() {
   var cache,
       cacheStream,
@@ -14142,7 +14142,7 @@ function intersect(x0, y0, x1, y1, x2, y2, x3, y3) {
 }
 
 // Compute perpendicular offset line of length rc.
-// http://mathworld.wolfram.com/Circle-LineIntersection.html
+// https://mathworld.wolfram.com/Circle-LineIntersection.html
 function cornerTangents(x0, y0, x1, y1, r1, rc, cw) {
   var x01 = x0 - x1,
       y01 = y0 - y1,

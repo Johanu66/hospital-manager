@@ -13,7 +13,7 @@
 /*!
 
 JSZip - A Javascript class for generating and reading zip files
-<http://stuartk.com/jszip>
+<https://stuartk.com/jszip>
 
 (c) 2009-2014 Stuart Knightley <stuart [at] stuartk.com>
 Dual licenced under the MIT license or GPLv3. See https://raw.github.com/Stuk/jszip/master/LICENSE.markdown.
@@ -213,7 +213,7 @@ var table = [
 /**
  *
  *  Javascript crc32
- *  http://www.webtoolkit.info/
+ *  https://www.webtoolkit.info/
  *
  */
 module.exports = function crc32(input, crc) {
@@ -1028,7 +1028,7 @@ var generateCompressedObjectFrom = function(file, compression, compressionOption
  * @param {Boolean} isDir true if the entry is a directory, false otherwise.
  * @return {Number} a 32 bit integer.
  *
- * adapted from http://unix.stackexchange.com/questions/14705/the-zip-formats-external-file-attribute :
+ * adapted from https://unix.stackexchange.com/questions/14705/the-zip-formats-external-file-attribute :
  *
  * TTTTsstrwxrwxrwx0000000000ADVSHR
  * ^^^^____________________________ file type, see zipinfo.c (UNX_*)
@@ -1124,9 +1124,9 @@ var generateZipParts = function(name, file, compressedObject, offset, platform) 
     }
 
     // date
-    // @see http://www.delorie.com/djgpp/doc/rbinter/it/52/13.html
-    // @see http://www.delorie.com/djgpp/doc/rbinter/it/65/16.html
-    // @see http://www.delorie.com/djgpp/doc/rbinter/it/66/16.html
+    // @see https://www.delorie.com/djgpp/doc/rbinter/it/52/13.html
+    // @see https://www.delorie.com/djgpp/doc/rbinter/it/65/16.html
+    // @see https://www.delorie.com/djgpp/doc/rbinter/it/66/16.html
 
     dosTime = date.getHours();
     dosTime = dosTime << 6;
@@ -2010,12 +2010,12 @@ function arrayLikeToString(array) {
     // Performances notes :
     // --------------------
     // String.fromCharCode.apply(null, array) is the fastest, see
-    // see http://jsperf.com/converting-a-uint8array-to-a-string/2
+    // see https://jsperf.com/converting-a-uint8array-to-a-string/2
     // but the stack is limited (and we can get huge arrays !).
     //
     // result += String.fromCharCode(array[i]); generate too many strings !
     //
-    // This code is inspired by http://jsperf.com/arraybuffer-to-string-apply-performance/2
+    // This code is inspired by https://jsperf.com/arraybuffer-to-string-apply-performance/2
     var chunk = 65536;
     var result = [],
         len = array.length,
@@ -2412,7 +2412,7 @@ ZipEntries.prototype = {
 
             if (isGarbage) {
                 throw new Error("Can't find end of central directory : is this a zip file ? " +
-                                "If it is, see http://stuk.github.io/jszip/documentation/howto/read_zip.html");
+                                "If it is, see https://stuk.github.io/jszip/documentation/howto/read_zip.html");
             } else {
                 throw new Error("Corrupted zip : can't find end of central directory");
             }
@@ -2441,7 +2441,7 @@ ZipEntries.prototype = {
             all numbers as 64-bit double precision IEEE 754 floating point numbers.
             So, we have 53bits for integers and bitwise operations treat everything as 32bits.
             see https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Operators/Bitwise_Operators
-            and http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf section 8.5
+            and https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf section 8.5
             */
 
             // should look for a zip64 EOCD locator
@@ -2577,7 +2577,7 @@ ZipEntry.prototype = {
         reader.skip(22);
         // in some zip created on windows, the filename stored in the central dir contains \ instead of /.
         // Strangely, the filename here is OK.
-        // I would love to treat these zip files as corrupted (see http://www.info-zip.org/FAQ.html#backslashes
+        // I would love to treat these zip files as corrupted (see https://www.info-zip.org/FAQ.html#backslashes
         // or APPNOTE#4.4.17.1, "All slashes MUST be forward slashes '/'") but there are a lot of bad zip generators...
         // Search "unzip mismatching "local" filename continuing with "central" filename version" on
         // the internet.
@@ -2585,7 +2585,7 @@ ZipEntry.prototype = {
         // I think I see the logic here : the central directory is used to display
         // content and the local directory is used to extract the files. Mixing / and \
         // may be used to display \ to windows users and use / when extracting the files.
-        // Unfortunately, this lead also to some issues : http://seclists.org/fulldisclosure/2009/Sep/394
+        // Unfortunately, this lead also to some issues : https://seclists.org/fulldisclosure/2009/Sep/394
         this.fileNameLength = reader.readInt(2);
         localExtraFieldsLength = reader.readInt(2); // can't be sure this will be the same as the central dir
         this.fileName = reader.readString(this.fileNameLength);
@@ -2891,7 +2891,7 @@ var Z_DEFLATED  = 8;
  * - `memLevel`
  * - `strategy`
  *
- * [http://zlib.net/manual.html#Advanced](http://zlib.net/manual.html#Advanced)
+ * [https://zlib.net/manual.html#Advanced](https://zlib.net/manual.html#Advanced)
  * for more information on these.
  *
  * Additional options, for internal needs:
@@ -3109,7 +3109,7 @@ Deflate.prototype.onEnd = function(status) {
  * - memLevel
  * - strategy
  *
- * [http://zlib.net/manual.html#Advanced](http://zlib.net/manual.html#Advanced)
+ * [https://zlib.net/manual.html#Advanced](https://zlib.net/manual.html#Advanced)
  * for more information on these.
  *
  * Sugar (options):
@@ -3232,7 +3232,7 @@ var gzheader = _dereq_('./zlib/gzheader');
  *
  * - `windowBits`
  *
- * [http://zlib.net/manual.html#Advanced](http://zlib.net/manual.html#Advanced)
+ * [https://zlib.net/manual.html#Advanced](https://zlib.net/manual.html#Advanced)
  * for more information on these.
  *
  * Additional options, for internal needs:
@@ -3472,7 +3472,7 @@ Inflate.prototype.onEnd = function(status) {
  *
  * - windowBits
  *
- * [http://zlib.net/manual.html#Advanced](http://zlib.net/manual.html#Advanced)
+ * [https://zlib.net/manual.html#Advanced](https://zlib.net/manual.html#Advanced)
  * for more information.
  *
  * Sugar (options):
@@ -9166,7 +9166,7 @@ module.exports = ZStream;
 (9)
 });
 
-/*! pdfmake v0.1.32, @license MIT, @link http://pdfmake.org */
+/*! pdfmake v0.1.32, @license MIT, @link https://pdfmake.org */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -9432,7 +9432,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
 	 * The buffer module from node.js, for the browser.
 	 *
-	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+	 * @author   Feross Aboukhadijeh <feross@feross.org> <https://feross.org>
 	 * @license  MIT
 	 */
 	/* eslint-disable no-proto */
@@ -10420,7 +10420,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return decodeCodePointsArray(res)
 	}
 
-	// Based on http://stackoverflow.com/a/22747272/680742, the browser with
+	// Based on https://stackoverflow.com/a/22747272/680742, the browser with
 	// the lowest limit is Chrome, with 0x10000 args.
 	// We go 1 magnitude less, for safety
 	var MAX_ARGUMENTS_LENGTH = 0x1000
@@ -11962,7 +11962,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Lodash <https://lodash.com/>
 	 * Copyright JS Foundation and other contributors <https://js.foundation/>
 	 * Released under MIT license <https://lodash.com/license>
-	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Based on Underscore.js 1.8.3 <https://underscorejs.org/LICENSE>
 	 * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 */
 	;(function() {
@@ -12107,7 +12107,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  /**
 	   * Used to match `RegExp`
-	   * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+	   * [syntax characters](https://ecma-international.org/ecma-262/7.0/#sec-patterns).
 	   */
 	  var reRegExpChar = /[\\^$.*+?()[\]{}|]/g,
 	      reHasRegExpChar = RegExp(reRegExpChar.source);
@@ -12130,7 +12130,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  /**
 	   * Used to match
-	   * [ES template delimiters](http://ecma-international.org/ecma-262/7.0/#sec-template-literal-lexical-components).
+	   * [ES template delimiters](https://ecma-international.org/ecma-262/7.0/#sec-template-literal-lexical-components).
 	   */
 	  var reEsTemplate = /\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g;
 
@@ -12232,7 +12232,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    rsEmoji
 	  ].join('|'), 'g');
 
-	  /** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
+	  /** Used to detect strings with [zero-width joiners or code points from the astral planes](https://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
 	  var reHasUnicode = RegExp('[' + rsZWJ + rsAstralRange  + rsComboRange + rsVarRange + ']');
 
 	  /** Used to detect strings that need a more robust regexp to match words. */
@@ -13422,7 +13422,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Used to resolve the
-	     * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+	     * [`toStringTag`](https://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
 	     * of values.
 	     */
 	    var nativeObjectToString = objectProto.toString;
@@ -14440,7 +14440,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Assigns `value` to `key` of `object` if the existing value is not equivalent
-	     * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+	     * using [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 	     * for equality comparisons.
 	     *
 	     * @private
@@ -16980,7 +16980,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function createCtor(Ctor) {
 	      return function() {
 	        // Use a `switch` statement to work with class constructors. See
-	        // http://ecma-international.org/ecma-262/7.0/#sec-ecmascript-function-objects-call-thisargument-argumentslist
+	        // https://ecma-international.org/ecma-262/7.0/#sec-ecmascript-function-objects-call-thisargument-argumentslist
 	        // for more details.
 	        var args = arguments;
 	        switch (args.length) {
@@ -17716,7 +17716,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        case regexpTag:
 	        case stringTag:
 	          // Coerce regexes to strings and treat strings, primitives and objects,
-	          // as equal. See http://www.ecma-international.org/ecma-262/7.0/#sec-regexp.prototype.tostring
+	          // as equal. See https://www.ecma-international.org/ecma-262/7.0/#sec-regexp.prototype.tostring
 	          // for more details.
 	          return object == (other + '');
 
@@ -18502,7 +18502,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * This function is like
-	     * [`Object.keys`](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+	     * [`Object.keys`](https://ecma-international.org/ecma-262/7.0/#sec-object.keys)
 	     * except that it includes inherited enumerable properties.
 	     *
 	     * @private
@@ -18901,7 +18901,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Creates an array of `array` values not included in the other given arrays
-	     * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+	     * using [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 	     * for equality comparisons. The order and references of result values are
 	     * determined by the first array.
 	     *
@@ -19402,7 +19402,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Gets the index at which the first occurrence of `value` is found in `array`
-	     * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+	     * using [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 	     * for equality comparisons. If `fromIndex` is negative, it's used as the
 	     * offset from the end of `array`.
 	     *
@@ -19456,7 +19456,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Creates an array of unique values that are included in all given arrays
-	     * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+	     * using [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 	     * for equality comparisons. The order and references of result values are
 	     * determined by the first array.
 	     *
@@ -19650,7 +19650,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Removes all given values from `array` using
-	     * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+	     * [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 	     * for equality comparisons.
 	     *
 	     * **Note:** Unlike `_.without`, this method mutates `array`. Use `_.remove`
@@ -20269,7 +20269,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Creates an array of unique values, in order, from all given arrays using
-	     * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+	     * [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 	     * for equality comparisons.
 	     *
 	     * @static
@@ -20347,7 +20347,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Creates a duplicate-free version of an array, using
-	     * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+	     * [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 	     * for equality comparisons, in which only the first occurrence of each element
 	     * is kept. The order of result values is determined by the order they occur
 	     * in the array.
@@ -20490,7 +20490,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Creates an array excluding all given values using
-	     * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+	     * [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 	     * for equality comparisons.
 	     *
 	     * **Note:** Unlike `_.pull`, this method returns a new array.
@@ -21377,7 +21377,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Checks if `value` is in `collection`. If `collection` is a string, it's
 	     * checked for a substring of `value`, otherwise
-	     * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+	     * [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 	     * is used for equality comparisons. If `fromIndex` is negative, it's used as
 	     * the offset from the end of `collection`.
 	     *
@@ -22082,7 +22082,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *
 	     * This method differs from `_.bind` by allowing bound functions to reference
 	     * methods that may be redefined or don't yet exist. See
-	     * [Peter Michaux's article](http://peter.michaux.ca/articles/lazy-function-definition-pattern)
+	     * [Peter Michaux's article](https://peter.michaux.ca/articles/lazy-function-definition-pattern)
 	     * for more details.
 	     *
 	     * The `_.bindKey.placeholder` value, which defaults to `_` in monolithic
@@ -22476,7 +22476,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * **Note:** The cache is exposed as the `cache` property on the memoized
 	     * function. Its creation may be customized by replacing the `_.memoize.Cache`
 	     * constructor with one whose instances implement the
-	     * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
+	     * [`Map`](https://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
 	     * method interface of `clear`, `delete`, `get`, `has`, and `set`.
 	     *
 	     * @static
@@ -22776,7 +22776,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Creates a function that invokes `func` with the `this` binding of the
 	     * create function and an array of arguments much like
-	     * [`Function#apply`](http://www.ecma-international.org/ecma-262/7.0/#sec-function.prototype.apply).
+	     * [`Function#apply`](https://www.ecma-international.org/ecma-262/7.0/#sec-function.prototype.apply).
 	     *
 	     * **Note:** This method is based on the
 	     * [spread operator](https://mdn.io/spread_operator).
@@ -23124,7 +23124,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Performs a
-	     * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+	     * [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 	     * comparison between two values to determine if they are equivalent.
 	     *
 	     * @static
@@ -23661,7 +23661,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Checks if `value` is a valid array-like length.
 	     *
 	     * **Note:** This method is loosely based on
-	     * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+	     * [`ToLength`](https://ecma-international.org/ecma-262/7.0/#sec-tolength).
 	     *
 	     * @static
 	     * @memberOf _
@@ -23690,7 +23690,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Checks if `value` is the
-	     * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+	     * [language type](https://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
 	     * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
 	     *
 	     * @static
@@ -24344,7 +24344,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Converts `value` to an integer.
 	     *
 	     * **Note:** This method is loosely based on
-	     * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
+	     * [`ToInteger`](https://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
 	     *
 	     * @static
 	     * @memberOf _
@@ -24378,7 +24378,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * array-like object.
 	     *
 	     * **Note:** This method is based on
-	     * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+	     * [`ToLength`](https://ecma-international.org/ecma-262/7.0/#sec-tolength).
 	     *
 	     * @static
 	     * @memberOf _
@@ -25216,7 +25216,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Creates an array of the own enumerable property names of `object`.
 	     *
 	     * **Note:** Non-object values are coerced to objects. See the
-	     * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+	     * [ES spec](https://ecma-international.org/ecma-262/7.0/#sec-object.keys)
 	     * for more details.
 	     *
 	     * @static
@@ -26171,7 +26171,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * (under "semi-related fun fact") for more details.
 	     *
 	     * When working with HTML you should always
-	     * [quote attribute values](http://wonko.com/post/html-escaping) to reduce
+	     * [quote attribute values](https://wonko.com/post/html-escaping) to reduce
 	     * XSS vectors.
 	     *
 	     * @static
@@ -26608,7 +26608,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * object is given, it takes precedence over `_.templateSettings` values.
 	     *
 	     * **Note:** In the development build `_.template` utilizes
-	     * [sourceURLs](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl)
+	     * [sourceURLs](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl)
 	     * for easier debugging.
 	     *
 	     * For more information on precompiling templates see
@@ -26706,7 +26706,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    function template(string, options, guard) {
 	      // Based on John Resig's `tmpl` implementation
-	      // (http://ejohn.org/blog/javascript-micro-templating/)
+	      // (https://ejohn.org/blog/javascript-micro-templating/)
 	      // and Laura Doktorova's doT.js (https://github.com/olado/doT).
 	      var settings = lodash.templateSettings;
 
@@ -29019,7 +29019,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (true) {
 	    // Expose Lodash on the global object to prevent errors when Lodash is
 	    // loaded by a script tag in the presence of an AMD loader.
-	    // See http://requirejs.org/docs/errors.html#mismatch for more details.
+	    // See https://requirejs.org/docs/errors.html#mismatch for more details.
 	    // Use `_.noConflict` to remove Lodash from the global object.
 	    root._ = _;
 
@@ -32266,9 +32266,9 @@ return /******/ (function(modules) { // webpackBootstrap
 			availableWidth -= col._calcWidth;
 		});
 
-		// http://www.freesoft.org/CIE/RFC/1942/18.htm
-		// http://www.w3.org/TR/CSS2/tables.html#width-layout
-		// http://dev.w3.org/csswg/css3-tables-algorithms/Overview.src.htm
+		// https://www.freesoft.org/CIE/RFC/1942/18.htm
+		// https://www.w3.org/TR/CSS2/tables.html#width-layout
+		// https://dev.w3.org/csswg/css3-tables-algorithms/Overview.src.htm
 		var minW = autoMin + starMaxMin * starColumns.length;
 		var maxW = autoMax + starMaxMax * starColumns.length;
 		if (minW >= availableWidth) {
@@ -37691,7 +37691,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function installPostMessageImplementation() {
 	        // Installs an event handler on `global` for the `message` event: see
 	        // * https://developer.mozilla.org/en/DOM/window.postMessage
-	        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+	        // * https://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
 
 	        var messagePrefix = "setImmediate$" + Math.random() + "$";
 	        var onGlobalMessage = function(event) {
@@ -45316,7 +45316,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.inspect = inspect;
 
 
-	// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
+	// https://en.wikipedia.org/wiki/ANSI_escape_code#graphics
 	inspect.colors = {
 	  'bold' : [1, 22],
 	  'italic' : [3, 23],
@@ -45407,7 +45407,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  // IE doesn't make error fields non-enumerable
-	  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
+	  // https://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
 	  if (isError(value)
 	      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
 	    return formatError(value);
@@ -45806,7 +45806,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/*!
 	 * The buffer module from node.js, for the browser.
 	 *
-	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+	 * @author   Feross Aboukhadijeh <feross@feross.org> <https://feross.org>
 	 * @license  MIT
 	 */
 	function compare(a, b) {
@@ -45842,11 +45842,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// based on node assert, original notice:
 
-	// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
+	// https://wiki.commonjs.org/wiki/Unit_Testing/1.0
 	//
 	// THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
 	//
-	// Originally from narwhal.js (http://narwhaljs.org)
+	// Originally from narwhal.js (https://narwhaljs.org)
 	// Copyright (c) 2009 Thomas Robinson <280north.com>
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48210,7 +48210,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	['utf16be', 'utf16be', 'utf16be', 'utf16be', 'utf16be', 'utf16be'],
 
 	// macintosh
-	// Mappings available at http://unicode.org/Public/MAPPINGS/VENDORS/APPLE/
+	// Mappings available at https://unicode.org/Public/MAPPINGS/VENDORS/APPLE/
 	// 0	Roman                 17	Malayalam
 	// 1	Japanese	            18	Sinhalese
 	// 2	Traditional Chinese	  19	Burmese
@@ -48234,11 +48234,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	['ascii'],
 
 	// windows
-	// Docs here: http://msdn.microsoft.com/en-us/library/system.text.encoding(v=vs.110).aspx
+	// Docs here: https://msdn.microsoft.com/en-us/library/system.text.encoding(v=vs.110).aspx
 	['symbol', 'utf16be', 'shift-jis', 'gb18030', 'big5', 'wansung', 'johab', null, null, null, 'utf16be']];
 
 	// Overrides for Mac scripts by language id.
-	// See http://unicode.org/Public/MAPPINGS/VENDORS/APPLE/Readme.txt
+	// See https://unicode.org/Public/MAPPINGS/VENDORS/APPLE/Readme.txt
 	var MAC_LANGUAGE_ENCODINGS = {
 	  15: 'maciceland',
 	  17: 'macturkish',
@@ -52534,8 +52534,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 	// This maps the Unicode Script property to an OpenType script tag
-	// Data from http://www.microsoft.com/typography/otspec/scripttags.htm
-	// and http://www.unicode.org/Public/UNIDATA/PropertyValueAliases.txt.
+	// Data from https://www.microsoft.com/typography/otspec/scripttags.htm
+	// and https://www.unicode.org/Public/UNIDATA/PropertyValueAliases.txt.
 	var UNICODE_SCRIPTS = {
 	  Caucasian_Albanian: 'aghb',
 	  Arabic: 'arab',
@@ -52755,7 +52755,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  merc: true, // Meroitic Cursive
 	  mero: true, // Meroitic Hieroglyphs
 
-	  // Unicode 7.0 (not listed on http://www.microsoft.com/typography/otspec/scripttags.htm)
+	  // Unicode 7.0 (not listed on https://www.microsoft.com/typography/otspec/scripttags.htm)
 	  mani: true, // Manichaean
 	  mend: true, // Mende Kikakui
 	  nbat: true, // Nabataean
@@ -55697,8 +55697,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *   - apply ljmo, vjmo, and tjmo OpenType features to decomposed Jamo sequences.
 	 *
 	 * This logic is based on the following documents:
-	 *   - http://www.microsoft.com/typography/OpenTypeDev/hangul/intro.htm
-	 *   - http://ktug.org/~nomos/harfbuzz-hangul/hangulshaper.pdf
+	 *   - https://www.microsoft.com/typography/OpenTypeDev/hangul/intro.htm
+	 *   - https://ktug.org/~nomos/harfbuzz-hangul/hangulshaper.pdf
 	 */
 	var HangulShaper = (_temp$1 = _class$5 = function (_DefaultShaper) {
 	  _inherits(HangulShaper, _DefaultShaper);
@@ -58715,7 +58715,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          case 'quadraticCurveTo':
 	          case 'bezierCurveTo':
 	            if (c.command === 'quadraticCurveTo') {
-	              // http://fontforge.org/bezier.html
+	              // https://fontforge.org/bezier.html
 	              var _c$args2 = c.args,
 	                  qp1x = _c$args2[0],
 	                  qp1y = _c$args2[1],
@@ -58736,7 +58736,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                  p3y = _c$args3[5];
 	            }
 
-	            // http://blog.hackers-cafe.net/2009/06/how-to-calculate-bezier-curves-bounding.html
+	            // https://blog.hackers-cafe.net/2009/06/how-to-calculate-bezier-curves-bounding.html
 	            bbox.addPoint(p3x, p3y);
 
 	            var p0 = [cx, cy];
@@ -58962,7 +58962,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * Because of the way bezier curves are defined, some of the control points
 	   * can be outside of the bounding box. Where `bbox` takes this into account,
 	   * `cbox` does not. Thus, cbox is less accurate, but faster to compute.
-	   * See [here](http://www.freetype.org/freetype2/docs/glyphs/glyphs-6.html#section-2)
+	   * See [here](https://www.freetype.org/freetype2/docs/glyphs/glyphs-6.html#section-2)
 	   * for a more detailed description.
 	   *
 	   * @type {BBox}
@@ -62279,7 +62279,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Subclass of TTFFont that represents a TTF/OTF font compressed by WOFF2
-	 * See spec here: http://www.w3.org/TR/WOFF2/
+	 * See spec here: https://www.w3.org/TR/WOFF2/
 	 */
 
 	var WOFF2Font = function (_TTFFont) {
@@ -63607,7 +63607,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// == UTF-16 codec =============================================================
 	// Decoder chooses automatically from UTF-16LE and UTF-16BE using BOM and space-based heuristic.
 	// Defaults to UTF-16LE, as it's prevalent and default in Node.
-	// http://en.wikipedia.org/wiki/UTF-16 and http://encoding.spec.whatwg.org/#utf-16le
+	// https://en.wikipedia.org/wiki/UTF-16 and https://encoding.spec.whatwg.org/#utf-16le
 	// Decoder default can be changed: iconv.decode(buf, 'utf16', {defaultEncoding: 'utf-16be'});
 
 	// Encoder uses UTF-16LE and prepends BOM (which can be overridden with addBOM: false).
@@ -63725,7 +63725,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Buffer = __webpack_require__(2).Buffer;
 
 	// UTF-7 codec, according to https://tools.ietf.org/html/rfc2152
-	// See also below a UTF-7-IMAP codec, according to http://tools.ietf.org/html/rfc3501#section-5.1.3
+	// See also below a UTF-7-IMAP codec, according to https://tools.ietf.org/html/rfc3501#section-5.1.3
 
 	exports.utf7 = Utf7Codec;
 	exports.unicode11utf7 = 'utf7'; // Alias UNICODE-1-1-UTF-7
@@ -63841,7 +63841,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	// UTF-7-IMAP codec.
-	// RFC3501 Sec. 5.1.3 Modified UTF-7 (http://tools.ietf.org/html/rfc3501#section-5.1.3)
+	// RFC3501 Sec. 5.1.3 Modified UTF-7 (https://tools.ietf.org/html/rfc3501#section-5.1.3)
 	// Differences:
 	//  * Base64 part is started by "&" instead of "+"
 	//  * Direct characters are 0x20-0x7E, except "&" (0x26)
@@ -65322,7 +65322,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    //
 	    // After JIS X 0213 appeared, Shift_JIS-2004, EUC-JISX0213 and ISO2022-JP-2004 followed, with just changing the planes.
 	    //
-	    // Overall, it seems that it's a mess :( http://www8.plala.or.jp/tkubota1/unicode-symbols-map2.html
+	    // Overall, it seems that it's a mess :( https://www8.plala.or.jp/tkubota1/unicode-symbols-map2.html
 
 	    'shiftjis': {
 	        type: '_dbcs',
@@ -65353,7 +65353,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	    // == Chinese/GBK ==========================================================
-	    // http://en.wikipedia.org/wiki/GBK
+	    // https://en.wikipedia.org/wiki/GBK
 	    // We mostly implement W3C recommendation: https://www.w3.org/TR/encoding/#gbk-encoder
 
 	    // Oldest GB2312 (1981, ~7600 chars) is a subset of CP936
@@ -65383,9 +65383,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // GB18030 is an algorithmic extension of GBK.
 	    // Main source: https://www.w3.org/TR/encoding/#gbk-encoder
-	    // http://icu-project.org/docs/papers/gb18030.html
-	    // http://source.icu-project.org/repos/icu/data/trunk/charset/data/xml/gb-18030-2000.xml
-	    // http://www.khngai.com/chinese/charmap/tblgbk.php?page=0
+	    // https://icu-project.org/docs/papers/gb18030.html
+	    // https://source.icu-project.org/repos/icu/data/trunk/charset/data/xml/gb-18030-2000.xml
+	    // https://www.khngai.com/chinese/charmap/tblgbk.php?page=0
 	    'gb18030': {
 	        type: '_dbcs',
 	        table: function() { return __webpack_require__(100).concat(__webpack_require__(101)) },
@@ -65419,10 +65419,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // == Big5/Taiwan/Hong Kong ================================================
 	    // There are lots of tables for Big5 and cp950. Please see the following links for history:
-	    // http://moztw.org/docs/big5/  http://www.haible.de/bruno/charsets/conversion-tables/Big5.html
+	    // https://moztw.org/docs/big5/  https://www.haible.de/bruno/charsets/conversion-tables/Big5.html
 	    // Variations, in roughly number of defined chars:
-	    //  * Windows CP 950: Microsoft variant of Big5. Canonical: http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP950.TXT
-	    //  * Windows CP 951: Microsoft variant of Big5-HKSCS-2001. Seems to be never public. http://me.abelcheung.org/articles/research/what-is-cp951/
+	    //  * Windows CP 950: Microsoft variant of Big5. Canonical: https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP950.TXT
+	    //  * Windows CP 951: Microsoft variant of Big5-HKSCS-2001. Seems to be never public. https://me.abelcheung.org/articles/research/what-is-cp951/
 	    //  * Big5-2003 (Taiwan standard) almost superset of cp950.
 	    //  * Unicode-at-on (UAO) / Mozilla 1.8. Falling out of use on the Web. Not supported by other browsers.
 	    //  * Big5-HKSCS (-2001, -2004, -2008). Hong Kong standard. 
@@ -65434,11 +65434,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    //    MS Internet Explorer switches from big5 to big5-hkscs when a patch applied.
 	    //    Great discussion & recap of what's going on https://bugzilla.mozilla.org/show_bug.cgi?id=912470#c31
 	    //    In the encoder, it might make sense to support encoding old PUA mappings to Big5 bytes seq-s.
-	    //    Official spec: http://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/doc/2003cmp_2008.txt
-	    //                   http://www.ogcio.gov.hk/tc/business/tech_promotion/ccli/terms/doc/hkscs-2008-big5-iso.txt
+	    //    Official spec: https://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/doc/2003cmp_2008.txt
+	    //                   https://www.ogcio.gov.hk/tc/business/tech_promotion/ccli/terms/doc/hkscs-2008-big5-iso.txt
 	    // 
-	    // Current understanding of how to deal with Big5(-HKSCS) is in the Encoding Standard, http://encoding.spec.whatwg.org/#big5-encoder
-	    // Unicode mapping (http://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/OTHER/BIG5.TXT) is said to be wrong.
+	    // Current understanding of how to deal with Big5(-HKSCS) is in the Encoding Standard, https://encoding.spec.whatwg.org/#big5-encoder
+	    // Unicode mapping (https://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/OTHER/BIG5.TXT) is said to be wrong.
 
 	    'windows950': 'cp950',
 	    'ms950': 'cp950',
@@ -71043,7 +71043,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   you may not use this file except in compliance with the License.
 	   You may obtain a copy of the License at
 
-	   http://www.apache.org/licenses/LICENSE-2.0
+	   https://www.apache.org/licenses/LICENSE-2.0
 
 	   Unless required by applicable law or agreed to in writing, software
 	   distributed under the License is distributed on an "AS IS" BASIS,
@@ -72027,7 +72027,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   you may not use this file except in compliance with the License.
 	   You may obtain a copy of the License at
 
-	   http://www.apache.org/licenses/LICENSE-2.0
+	   https://www.apache.org/licenses/LICENSE-2.0
 
 	   Unless required by applicable law or agreed to in writing, software
 	   distributed under the License is distributed on an "AS IS" BASIS,
@@ -72157,7 +72157,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   you may not use this file except in compliance with the License.
 	   You may obtain a copy of the License at
 
-	   http://www.apache.org/licenses/LICENSE-2.0
+	   https://www.apache.org/licenses/LICENSE-2.0
 
 	   Unless required by applicable law or agreed to in writing, software
 	   distributed under the License is distributed on an "AS IS" BASIS,
@@ -72476,7 +72476,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   you may not use this file except in compliance with the License.
 	   You may obtain a copy of the License at
 
-	   http://www.apache.org/licenses/LICENSE-2.0
+	   https://www.apache.org/licenses/LICENSE-2.0
 
 	   Unless required by applicable law or agreed to in writing, software
 	   distributed under the License is distributed on an "AS IS" BASIS,
@@ -72732,7 +72732,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   you may not use this file except in compliance with the License.
 	   You may obtain a copy of the License at
 
-	   http://www.apache.org/licenses/LICENSE-2.0
+	   https://www.apache.org/licenses/LICENSE-2.0
 
 	   Unless required by applicable law or agreed to in writing, software
 	   distributed under the License is distributed on an "AS IS" BASIS,
@@ -72798,7 +72798,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   you may not use this file except in compliance with the License.
 	   You may obtain a copy of the License at
 
-	   http://www.apache.org/licenses/LICENSE-2.0
+	   https://www.apache.org/licenses/LICENSE-2.0
 
 	   Unless required by applicable law or agreed to in writing, software
 	   distributed under the License is distributed on an "AS IS" BASIS,
@@ -75562,7 +75562,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * 1.3.2
 	 * 2016-06-16 18:25:19
 	 *
-	 * By Eli Grey, http://eligrey.com
+	 * By Eli Grey, https://eligrey.com
 	 * License: MIT
 	 *   See https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md
 	 */
@@ -75570,7 +75570,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/*global self */
 	/*jslint bitwise: true, indent: 4, laxbreak: true, laxcomma: true, smarttabs: true, plusplus: true */
 
-	/*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
+	/*! @source https://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
 
 	var saveAs = saveAs || (function(view) {
 		"use strict";
@@ -75584,7 +75584,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			, get_URL = function() {
 				return view.URL || view.webkitURL || view;
 			}
-			, save_link = doc ? doc.createElementNS("http://www.w3.org/1999/xhtml", "a") : []
+			, save_link = doc ? doc.createElementNS("https://www.w3.org/1999/xhtml", "a") : []
 			, can_use_save_link = "download" in save_link
 			, click = function(node) {
 				var event = new MouseEvent("click");
@@ -75789,13 +75789,13 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
  * @copyright   Copyright 2008-2017 SpryMedia Ltd.
  *
  * This source file is free software, available under the following license:
- *   MIT license - http://datatables.net/license
+ *   MIT license - https://datatables.net/license
  *
  * This source file is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
  * or FITNESS FOR A PARTICULAR PURPOSE. See the license files for details.
  *
- * For details please refer to: http://www.datatables.net
+ * For details please refer to: https://www.datatables.net
  */
 
 /*jslint evil: true, undef: true, browser: true */
@@ -75841,7 +75841,7 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
 	 * flexible tool, based upon the foundations of progressive enhancement,
 	 * which will add advanced interaction controls to any HTML table. For a
 	 * full list of features please refer to
-	 * [DataTables.net](href="http://datatables.net).
+	 * [DataTables.net](href="https://datatables.net).
 	 *
 	 * Note that the `DataTable` object is not a global variable but is aliased
 	 * to `jQuery.fn.DataTable` and `jQuery.fn.dataTable` through which it may
@@ -77122,7 +77122,7 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
 	// Escape regular expression special characters
 	var _re_escape_regex = new RegExp( '(\\' + [ '/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\', '$', '^', '-' ].join('|\\') + ')', 'g' );
 	
-	// http://en.wikipedia.org/wiki/Foreign_exchange_market
+	// https://en.wikipedia.org/wiki/Foreign_exchange_market
 	// - \u20BD - Russian ruble.
 	// - \u20a9 - South Korean Won
 	// - \u20BA - Turkish Lira
@@ -80286,7 +80286,7 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
 					// If it looks like there is an HTML entity in the string,
 					// attempt to decode it so sorting works as expected. Note that
 					// we could use a single line of jQuery to do this, but the DOM
-					// method used here is much faster http://jsperf.com/html-decode
+					// method used here is much faster https://jsperf.com/html-decode
 					if ( cellData.indexOf && cellData.indexOf('&') !== -1 ) {
 						__filter_div.innerHTML = cellData;
 						cellData = __filter_div_textContent ?
@@ -82220,7 +82220,7 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
 	
 		if ( tn ) {
 			msg += '. For more information about this error, please see '+
-			'http://datatables.net/tn/'+tn;
+			'https://datatables.net/tn/'+tn;
 		}
 	
 		if ( ! level  ) {
@@ -85185,7 +85185,7 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
 	/**
 	 * Version string for plug-ins to check compatibility. Allowed format is
 	 * `a.b.c-d` where: a:int, b:int, c:int, d:string(dev|beta|alpha). `d` is used
-	 * only for non-release builds. See http://semver.org/ for more information.
+	 * only for non-release builds. See https://semver.org/ for more information.
 	 *  @member
 	 *  @type string
 	 *  @default Version number
@@ -85758,7 +85758,7 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
 		 * --------
 		 *
 		 * As an object, the parameters in the object are passed to
-		 * [jQuery.ajax](http://api.jquery.com/jQuery.ajax/) allowing fine control
+		 * [jQuery.ajax](https://api.jquery.com/jQuery.ajax/) allowing fine control
 		 * of the Ajax request. DataTables has a number of default parameters which
 		 * you can override using this option. Please refer to the jQuery
 		 * documentation for a full description of the options available, although
@@ -87465,7 +87465,7 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "url": "http://www.sprymedia.co.uk/dataTables/lang.txt"
+			 *          "url": "https://www.sprymedia.co.uk/dataTables/lang.txt"
 			 *        }
 			 *      } );
 			 *    } );
@@ -90524,7 +90524,7 @@ this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {
 		// string
 		"string-pre": function ( a ) {
 			// This is a little complex, but faster than always calling toString,
-			// http://jsperf.com/tostring-v-check
+			// https://jsperf.com/tostring-v-check
 			return _empty(a) ?
 				'' :
 				typeof a === 'string' ?

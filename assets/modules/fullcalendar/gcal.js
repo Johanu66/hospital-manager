@@ -218,7 +218,7 @@ var GcalEventSource = /** @class */ (function (_super) {
         var apiKey = this.googleCalendarApiKey || this.calendar.opt('googleCalendarApiKey');
         var params;
         if (!apiKey) {
-            this.reportError('Specify a googleCalendarApiKey. See http://fullcalendar.io/docs/google_calendar/');
+            this.reportError('Specify a googleCalendarApiKey. See https://fullcalendar.io/docs/google_calendar/');
             return null;
         }
         // The API expects an ISO8601 datetime with a time and timezone part.

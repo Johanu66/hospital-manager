@@ -29,6 +29,6 @@ map.addMarker({
   lng: 106.7654318,
   title: 'Sigma ID',
   infoWindow: {
-    content: '<h6>Sigma ID</h6><p>Jl.Setapak No.5, Citayam, Tajur Halang, Bogor, Jawa Barat 16320</p><p><a target="_blank" href="http://sigmaid.net/">Website</a></p>'
+    content: '<h6>Sigma ID</h6><p>Jl.Setapak No.5, Citayam, Tajur Halang, Bogor, Jawa Barat 16320</p><p><a target="_blank" href="https://sigmaid.net/">Website</a></p>'
   }
 });

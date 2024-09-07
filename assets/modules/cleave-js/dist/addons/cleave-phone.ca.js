@@ -10,7 +10,7 @@ function x(a,c){var b;if(null!=a.a[c])b=w(a,c,void 0);else a:{b=a.f[c];if(void 0
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
- http://www.apache.org/licenses/LICENSE-2.0
+ https://www.apache.org/licenses/LICENSE-2.0
 
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
@@ -31,7 +31,7 @@ G:!0,c:11,type:A},20:{name:"intl_number_format",G:!0,c:11,type:A},22:{name:"main
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
- http://www.apache.org/licenses/LICENSE-2.0
+ https://www.apache.org/licenses/LICENSE-2.0
 
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
@@ -86,7 +86,7 @@ null,null,"3406421234"],[null,null,"8(?:00|44|55|66|77|88)[2-9]\\d{6}","\\d{10}"
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
- http://www.apache.org/licenses/LICENSE-2.0
+ https://www.apache.org/licenses/LICENSE-2.0
 
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,

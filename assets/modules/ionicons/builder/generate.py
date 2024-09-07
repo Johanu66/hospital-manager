@@ -59,7 +59,7 @@ def generate_less(data):
   d = []
   d.append('/*!');
   d.append('Ionicons, v%s' % (font_version) );
-  d.append('Created by Ben Sperry for the Ionic Framework, http://ionicons.com/');
+  d.append('Created by Ben Sperry for the Ionic Framework, https://ionicons.com/');
   d.append('https://twitter.com/benjsperry  https://twitter.com/ionicframework');
   d.append('MIT License: https://github.com/driftyco/ionicons');
   d.append('*/');
@@ -239,7 +239,7 @@ def generate_composer_json(data):
     "name": "driftyco/ionicons",
     "description": "The premium icon font for Ionic Framework.",
     "keywords": [ "fonts", "icon font", "icons", "ionic", "web font"],
-    "homepage": "http://ionicons.com/",
+    "homepage": "https://ionicons.com/",
     "authors": [
       {
         "name": "Ben Sperry",

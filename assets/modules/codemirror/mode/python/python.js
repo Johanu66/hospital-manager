@@ -1,5 +1,5 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: http://codemirror.net/LICENSE
+// Distributed under an MIT license: https://codemirror.net/LICENSE
 
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
@@ -58,7 +58,7 @@
 
     var py3 = !(parserConf.version && Number(parserConf.version) < 3)
     if (py3) {
-      // since http://legacy.python.org/dev/peps/pep-0465/ @ is also an operator
+      // since https://legacy.python.org/dev/peps/pep-0465/ @ is also an operator
       var identifiers = parserConf.identifiers|| /^[_A-Za-z\u00A1-\uFFFF][_A-Za-z0-9\u00A1-\uFFFF]*/;
       myKeywords = myKeywords.concat(["nonlocal", "False", "True", "None", "async", "await"]);
       myBuiltins = myBuiltins.concat(["ascii", "bytes", "exec", "print"]);

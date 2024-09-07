@@ -1,6 +1,6 @@
 # Font generation script from FontCustom
 # https://github.com/FontCustom/fontcustom/
-# http://fontcustom.com/
+# https://fontcustom.com/
 
 import fontforge
 import os
@@ -139,7 +139,7 @@ else:
   svgfile = open(fontfile + '.svg', 'r+')
   svgtext = svgfile.read()
   svgfile.seek(0)
-  svgfile.write(svgtext.replace('''<svg>''', '''<svg xmlns="http://www.w3.org/2000/svg">'''))
+  svgfile.write(svgtext.replace('''<svg>''', '''<svg xmlns="https://www.w3.org/2000/svg">'''))
   svgfile.close()
 
   scriptPath = os.path.dirname(os.path.realpath(__file__))
