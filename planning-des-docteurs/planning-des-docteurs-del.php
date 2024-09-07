@@ -9,6 +9,10 @@
         ], " id_planning = ".$_POST['id']);
 
         
-    header('Content-Type: application/json');
-    echo json_encode(" ");
+        header('Content-Type: application/json');
+        echo json_encode(" ");
+        // Vérification d'erreur
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            echo 'Erreur JSON : ' . json_last_error_msg();
+        }
     }

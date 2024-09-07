@@ -8,6 +8,10 @@
         $statement = $bdd->prepare("DELETE FROM specialite WHERE id_specialite = ?");
         $statement->execute(array($_POST['id']));
         
-    header('Content-Type: application/json');
-    echo json_encode($result['nom_specialite']);
+        header('Content-Type: application/json');
+        echo json_encode($result['nom_specialite']);
+        // Vérification d'erreur
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            echo 'Erreur JSON : ' . json_last_error_msg();
+        }
     }

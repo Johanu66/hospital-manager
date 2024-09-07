@@ -12,6 +12,10 @@
         $statement->execute(array($result['id_personne']));
         $patient = $result['nom_personne']." ".$result['prenom_personne'];
         
-    header('Content-Type: application/json');
-    echo json_encode($patient);
+        header('Content-Type: application/json');
+        echo json_encode($patient);
+        // Vérification d'erreur
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            echo 'Erreur JSON : ' . json_last_error_msg();
+        }
     }
