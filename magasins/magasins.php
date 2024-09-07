@@ -199,6 +199,7 @@
                 "order":[],
                 "ajax":{
                     url:"magasins-fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[

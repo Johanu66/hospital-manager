@@ -200,6 +200,7 @@
                 "order":[],
                 "ajax":{
                     url:"departements_fetch.php", //changer
+                    dataType:"json",
                     type:"POST"
                 },
                 "columnDefs":[
