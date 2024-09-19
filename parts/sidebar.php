@@ -1,6 +1,6 @@
 <div class="app-sidebar colored">
     <div class="sidebar-header">
-        <a class="header-brand" href="index.html">
+        <a class="header-brand" href="/">
             <div class="logo-img">
             <img src="../img/logo.png" width="30" class="header-brand-img" alt="lavalite"> 
             </div>
