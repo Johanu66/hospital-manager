@@ -14,6 +14,8 @@
         
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
+        <link rel="icon" type="image/png" href="../img/logo.png" />
+
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
         
         <link rel="stylesheet" href="../plugins/bootstrap/dist/css/bootstrap.min.css">
