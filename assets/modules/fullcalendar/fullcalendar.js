@@ -1557,7 +1557,7 @@ var EmitterMixin = /** @class */ (function (_super) {
         return this; // for chaining
     };
     EmitterMixin.prototype.hasHandlers = function (type) {
-        var hash = $._data(this, 'events'); // http://blog.jquery.com/2012/08/09/jquery-1-8-released/
+        var hash = $._data(this, 'events'); // https://blog.jquery.com/2012/08/09/jquery-1-8-released/
         return hash && hash[type] && hash[type].length > 0;
     };
     return EmitterMixin;
@@ -2133,7 +2133,7 @@ var GlobalEmitter = /** @class */ (function () {
         );
         // attach a handler to get called when ANY scroll action happens on the page.
         // this was impossible to do with normal on/off because 'scroll' doesn't bubble.
-        // http://stackoverflow.com/a/32954565/96342
+        // https://stackoverflow.com/a/32954565/96342
         window.addEventListener('scroll', this.handleScrollProxy = function (ev) {
             _this.handleScroll($.Event(ev));
         }, true // useCapture

@@ -15,7 +15,7 @@
 
 /*!
  * GMaps.js v0.4.25
- * http://hpneo.github.com/gmaps/
+ * https://hpneo.github.com/gmaps/
  *
  * Copyright 2017, Gustavo Leon
  * Released under the MIT License.
@@ -1880,7 +1880,7 @@ GMaps.prototype.toImage = function(options) {
 GMaps.staticMapURL = function(options){
   var parameters = [],
       data,
-      static_root = (location.protocol === 'file:' ? 'http:' : location.protocol ) + '//maps.googleapis.com/maps/api/staticmap';
+      static_root = (location.protocol === 'file:' ? 'https:' : location.protocol ) + '//maps.googleapis.com/maps/api/staticmap';
 
   if (options.url) {
     static_root = options.url;
@@ -2290,7 +2290,7 @@ if (typeof window.google === 'object' && window.google.maps) {
   // Polygon containsLatLng
   // https://github.com/tparkin/Google-Maps-Point-in-Polygon
   // Poygon getBounds extension - google-maps-extensions
-  // http://code.google.com/p/google-maps-extensions/source/browse/google.maps.Polygon.getBounds.js
+  // https://code.google.com/p/google-maps-extensions/source/browse/google.maps.Polygon.getBounds.js
   if (!google.maps.Polygon.prototype.getBounds) {
     google.maps.Polygon.prototype.getBounds = function(latLng) {
       var bounds = new google.maps.LatLngBounds();

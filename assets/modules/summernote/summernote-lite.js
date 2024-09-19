@@ -639,7 +639,7 @@ var linkDialog = function (opt) {
         '</div>' +
         '<div class="note-form-group">' +
         '<label class="note-form-label">' + opt.lang.link.url + '</label>' +
-        '<input class="note-link-url note-input" type="text" value="http://" />' +
+        '<input class="note-link-url note-input" type="text" value="https://" />' +
         '</div>' +
         (!opt.disableLinkTarget
             ? '<div class="checkbox">' +
@@ -1098,8 +1098,8 @@ function uniqueId(prefix) {
 /**
  * returns bnd (bounds) from rect
  *
- * - IE Compatibility Issue: http://goo.gl/sRLOAo
- * - Scroll Issue: http://goo.gl/sNjUc
+ * - IE Compatibility Issue: https://goo.gl/sRLOAo
+ * - Scroll Issue: https://goo.gl/sNjUc
  *
  * @param {Rect} rect
  * @return {Object} bounds
@@ -1533,7 +1533,7 @@ function isElement(node) {
 }
 /**
  * ex) br, col, embed, hr, img, input, ...
- * @see http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements
+ * @see https://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements
  */
 function isVoid(node) {
     return node && /^BR|^IMG|^HR|^IFRAME|^BUTTON|^INPUT/.test(node.nodeName.toUpperCase());
@@ -2461,7 +2461,7 @@ var dom = {
  * @param {Boolean} isStart
  * @return {BoundaryPoint}
  *
- * @see http://msdn.microsoft.com/en-us/library/ie/ms535872(v=vs.85).aspx
+ * @see https://msdn.microsoft.com/en-us/library/ie/ms535872(v=vs.85).aspx
  */
 function textRangeToPoint(textRange, isStart) {
     var container = textRange.parentElement();
@@ -2982,7 +2982,7 @@ var WrappedRange = /** @class */ (function () {
  *  * BoundaryPoint: a point of dom tree
  *  * BoundaryPoints: two boundaryPoints corresponding to the start and the end of the Range
  *
- * See to http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html#Level-2-Range-Position
+ * See to https://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html#Level-2-Range-Position
  */
 var range = {
     /**
@@ -4371,9 +4371,9 @@ var Editor = /** @class */ (function () {
                 linkUrl = _this.options.onCreateLink(linkUrl);
             }
             else {
-                // if url doesn't match an URL schema, set http:// as default
+                // if url doesn't match an URL schema, set https:// as default
                 linkUrl = /^[A-Za-z][A-Za-z0-9+-.]*\:[\/\/]?/.test(linkUrl)
-                    ? linkUrl : 'http://' + linkUrl;
+                    ? linkUrl : 'https://' + linkUrl;
             }
             var anchors = [];
             if (isTextChanged) {
@@ -5420,7 +5420,7 @@ var Handle = /** @class */ (function () {
     return Handle;
 }());
 
-var defaultScheme = 'http://';
+var defaultScheme = 'https://';
 var linkPattern = /^([A-Za-z][A-Za-z0-9+-.]*\:[\/\/]?|mailto:[A-Z0-9._%+-]+@)?(www\.)?(.+)$/i;
 var AutoLink = /** @class */ (function () {
     function AutoLink(context) {
@@ -6396,7 +6396,7 @@ var LinkDialog = /** @class */ (function () {
             '</div>',
             '<div class="form-group note-form-group">',
             "<label class=\"note-form-label\">" + this.lang.link.url + "</label>",
-            '<input class="note-link-url form-control note-form-control note-input" type="text" value="http://" />',
+            '<input class="note-link-url form-control note-form-control note-input" type="text" value="https://" />',
             '</div>',
             !this.options.disableLinkTarget
                 ? $$1('<div/>').append(this.ui.checkbox({
@@ -6917,7 +6917,7 @@ var VideoDialog = /** @class */ (function () {
                 .attr('frameborder', 0)
                 .attr('height', '310')
                 .attr('width', '500')
-                .attr('src', 'http://v.qq.com/iframe/player.html?vid=' + vid + '&amp;auto=0');
+                .attr('src', 'https://v.qq.com/iframe/player.html?vid=' + vid + '&amp;auto=0');
         }
         else if (mp4Match || oggMatch || webmMatch) {
             $video = $$1('<video controls>')
@@ -7000,7 +7000,7 @@ var HelpDialog = /** @class */ (function () {
         var $container = this.options.dialogsInBody ? this.$body : this.$editor;
         var body = [
             '<p class="text-center">',
-            '<a href="http://summernote.org/" target="_blank">Summernote 0.8.9</a> · ',
+            '<a href="https://summernote.org/" target="_blank">Summernote 0.8.9</a> · ',
             '<a href="https://github.com/summernote/summernote" target="_blank">Project</a> · ',
             '<a href="https://github.com/summernote/summernote/issues" target="_blank">Issues</a>',
             '</p>'

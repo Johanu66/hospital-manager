@@ -1,5 +1,5 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: http://codemirror.net/LICENSE
+// Distributed under an MIT license: https://codemirror.net/LICENSE
 
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
@@ -136,7 +136,7 @@ CodeMirror.defineMode('shell', function() {
 
 CodeMirror.defineMIME('text/x-sh', 'shell');
 // Apache uses a slightly different Media Type for Shell scripts
-// http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
+// https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
 CodeMirror.defineMIME('application/x-sh', 'shell');
 
 });
