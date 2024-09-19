@@ -225,9 +225,9 @@ ____________________________________________________
 
 		// Creates an array of splines, one for each segment of the original curve. Algorithm based on the wikipedia articles: 
 		//
-		// http://de.wikipedia.org/w/index.php?title=Kubisch_Hermitescher_Spline&oldid=130168003 and 
-		// http://en.wikipedia.org/w/index.php?title=Monotone_cubic_interpolation&oldid=622341725 and the description of Fritsch-Carlson from
-		// http://math.stackexchange.com/questions/45218/implementation-of-monotone-cubic-interpolation
+		// https://de.wikipedia.org/w/index.php?title=Kubisch_Hermitescher_Spline&oldid=130168003 and 
+		// https://en.wikipedia.org/w/index.php?title=Monotone_cubic_interpolation&oldid=622341725 and the description of Fritsch-Carlson from
+		// https://math.stackexchange.com/questions/45218/implementation-of-monotone-cubic-interpolation
 		// for a detailed description see https://github.com/MichaelZinsmaier/CurvedLines/docu
 		function createHermiteSplines(datapoints, curvedLinesOptions, yPos) {
 			var points = datapoints.points;
