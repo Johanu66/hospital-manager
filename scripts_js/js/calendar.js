@@ -58,7 +58,7 @@ $(document).ready(function(t, e, i) {
             title: "Click for Google",
             start: new Date(r, n, 28),
             end: new Date(r, n, 29),
-            url: "http://google.com/",
+            url: "https://google.com/",
             className: "bg-lime"
         }],
         editable: !0,
