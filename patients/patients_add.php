@@ -13,6 +13,8 @@
             <div class="page-wrap">
                 <?php include("../parts/sidebar.php") ?>
 
+                <?php include("../if_test_env.php") ?>
+
                 <div class="main-content">
                     <div class="container-fluid">
                         <div class="page-header">
@@ -42,7 +44,7 @@
                             </div>
                         </div>
                         <?php
-                            if(isset($_POST['submit'])){
+                            if(isset($_POST['submit']) && !$_TEST_ENV){
                                 if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['sexe']) && !empty($_POST['adresse']) && !empty($_POST['tel']) && !empty($_POST['date_naissance'])){
                                     $photo = "default.jpg";
                                     // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur

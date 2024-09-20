@@ -12,6 +12,8 @@
             <div class="page-wrap">
                 <?php include("../parts/sidebar.php") ?>
 
+                <?php include("../if_test_env.php") ?>
+
                 <div class="main-content">
                     <div class="container-fluid">
                         <div class="page-header">
@@ -41,7 +43,7 @@
                             </div>
                         </div>
                         <?php
-                            if(isset($_POST['submit'])){
+                            if(isset($_POST['submit']) && !$_TEST_ENV){
                                 if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['sexe']) && !empty($_POST['adresse']) && !empty($_POST['tel']) && !empty($_POST['date_naissance'])){
                                     $id_patient = htmlspecialchars($_POST['id_patient']);
                                     $statement = $bdd->prepare("SELECT * FROM personne INNER JOIN patient ON id_personne = id_personne_fk_patient WHERE id_patient = ?");

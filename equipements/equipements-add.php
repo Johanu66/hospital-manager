@@ -13,6 +13,8 @@
             <div class="page-wrap">
                 <?php include("../parts/sidebar.php") ?>
 
+                <?php include("../if_test_env.php") ?>
+
                 <div class="main-content">
                     <div class="container-fluid">
                         <div class="page-header">
@@ -42,7 +44,7 @@
                             </div>
                         </div>
                         <?php
-                            if(isset($_POST['submit'])){
+                            if(isset($_POST['submit']) && !$_TEST_ENV){
                                 if(!empty($_POST['nom']) && !empty($_POST['departement']) && ((isset($_POST['equipement_emmagasine']) && !empty($_POST['magasin'])) || !isset($_POST['equipement_emmagasine']))){
                                     $photo = "default_shop.png";
                                     // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur

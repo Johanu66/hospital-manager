@@ -12,6 +12,8 @@
             <div class="page-wrap">
                 <?php include("../parts/sidebar.php") ?>
 
+                <?php include("../if_test_env.php") ?>
+
                 <div class="main-content">
                     <div class="container-fluid">
                         <div class="page-header">
@@ -41,7 +43,7 @@
                             </div>
                         </div>
                         <?php
-                            if(isset($_POST['submit'])){
+                            if(isset($_POST['submit']) && !$_TEST_ENV){
                                 if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['sexe']) && !empty($_POST['specialite']) && !empty($_POST['departement']) && !empty($_POST['date_prise_fonction']) && !empty($_POST['adresse']) && !empty($_POST['tel']) && !empty($_POST['date_naissance'])){
                                     $id_docteur = htmlspecialchars($_POST['id_docteur']);
                                     $statement = $bdd->prepare("SELECT * FROM personne INNER JOIN docteur ON id_personne = id_personne_fk_docteur INNER JOIN specialite ON id_specialite_fk_docteur = id_specialite INNER JOIN departement ON id_departement = id_departement_fk_docteur WHERE id_docteur = ?");
