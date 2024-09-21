@@ -720,6 +720,7 @@ INSERT INTO `specialite` (`id_specialite`, `nom_specialite`, `desc_specialite`, 
 --
 
 INSERT INTO `type_compte` (`id_type_compte`, `lib_type_compte`, `statut_type_compte`) VALUES
+(0, 'Super Admin', 'Actif'),
 (1, 'Super Admin', 'Actif'),
 (2, 'Admin', 'Actif'),
 (3, 'Editeur', 'Actif'),

@@ -1,6 +1,7 @@
 <?php
     include("../control_if_user_is_connected.php");
-    if(isset($_POST['id'])){
+    include("../if_test_env_json.php");
+    if(isset($_POST['id']) && !$_TEST_ENV){
         update(" personnel INNER JOIN personne ON id_personne_fk_personnel = id_personne ",[
             "del_personne" => "1"
         ]," id_personnel = '".$_POST['id']."'");

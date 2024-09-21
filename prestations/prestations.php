@@ -218,7 +218,7 @@
                                     swal('Effectué','La prestation '+data+' a été supprimée.', 'success');
                                 }
                                 else{
-                                    swal('Échoué','La suppression a échouée.', 'error');
+                                    swal("Info", "Vous ne pouvez pas effectuer cette action, car vous utilisez un compte visiteur.", "info")
                                 }
 
                                 prestationsDataTable.ajax.reload();

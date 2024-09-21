@@ -216,7 +216,7 @@
                                     swal('Effectué','Le service '+data+' a été supprimé.', 'success');
                                 }
                                 else{
-                                    swal('Échoué','La suppression a échouée.', 'error');
+                                    swal("Info", "Vous ne pouvez pas effectuer cette action, car vous utilisez un compte visiteur.", "info")
                                 }
 
                                 departementsDataTable.ajax.reload();

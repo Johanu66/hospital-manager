@@ -1,6 +1,7 @@
 <?php
     include("../control_if_user_is_connected.php");
-    if(isset($_POST['id'])){
+    include("../if_test_env_json.php");
+    if(isset($_POST['id']) && !$_TEST_ENV){
         $statement = $bdd->prepare("SELECT * FROM patient INNER JOIN personne ON id_personne_fk_patient = id_personne  WHERE id_patient = ?");
         $statement->execute(array($_POST['id']));
         $result = $statement->fetch();

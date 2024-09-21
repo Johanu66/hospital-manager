@@ -1,6 +1,7 @@
 <?php
     include("../control_if_user_is_connected.php");
-    if(isset($_POST['id'])){
+    include("../if_test_env_json.php");
+    if(isset($_POST['id']) && !$_TEST_ENV){
         $now = new DateTime();
         update("depense",[
             "del_depense" => '1',
