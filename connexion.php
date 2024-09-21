@@ -98,8 +98,8 @@
                             <div class="logo-centered">
                                 <a href="connexion.php"><img src="img/logo.png" width="40" alt=""></a>
                             </div>
-                            <h3>Connexion à l'App de gestion hospitalière</h3>
-                            <p>Ravi de vous revoir!</p>
+                            <h3 class="text-center">Connexion à l'App de gestion hospitalière</h3>
+                            <p class="text-center">Utilisez ces identifiants d'un compte visiteur existant, pour vous connecter et explorer l'application. Attention, vos actions seront limitées.</p>
                             <form action="" method="POST">
                                 <!-- Token CSRF caché -->
                                 <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
