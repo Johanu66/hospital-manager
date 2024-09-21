@@ -12,6 +12,8 @@
             <div class="page-wrap">
                 <?php include("../parts/sidebar.php") ?>
 
+                <?php include("../if_test_env.php") ?>
+
                 <div class="main-content">
                     <div class="container-fluid">
                         <div class="page-header">
@@ -41,7 +43,7 @@
                             </div>
                         </div>
                         <?php
-                            if(isset($_POST['submit'])){
+                            if(isset($_POST['submit']) && !$_TEST_ENV){
                                 if(!empty($_POST['id']) && !empty($_POST['date']) && !empty($_POST['nom']) && !empty($_POST['departement']) && !empty($_POST['montant'])){
                                     $id = htmlspecialchars($_POST['id']);
                                     $date = htmlspecialchars($_POST['date']);

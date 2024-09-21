@@ -12,6 +12,8 @@
             <div class="page-wrap">
                 <?php include("../parts/sidebar.php") ?>
 
+                <?php include("../if_test_env.php") ?>
+
                 <div class="main-content">
                     <div class="container-fluid">
                         <div class="page-header">
@@ -41,7 +43,7 @@
                             </div>
                         </div>
                         <?php
-                            if(isset($_POST['submit'])){
+                            if(isset($_POST['submit']) && !$_TEST_ENV){
                                 if(!empty($_POST['patient']) && !empty($_POST['specialite']) && !empty($_POST['date_rendez_vous']) && !empty($_POST['id'])){
                                     if(!isset($_POST['paiement']) | (isset($_POST['paiement']) && !empty($_POST['montant_paye']))){
                                         $paiement = "";
